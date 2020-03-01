@@ -1,6 +1,4 @@
-# Scene It App
-
-### Part 1: Rendering Movies and Search
+# Scene It Part 1: Rendering Movies and Search
 
 ## Objective
 
@@ -12,17 +10,17 @@ thumbs up or thumbs down after you watch them. The finished product will use
 Axios to make requests to an external API called OMDB, but we'll handle that in
 part 2!
 
-## Your Task:
+## Your Task
 
 Your task is to build a UI that "consumes" the data that comes from the OMDB
 API. When you fork the starter repository called scene-it-starter, you'll see
 something like this:
 
-![scene it 1](.././img/sceneitImg1.png)
+![scene it 1](images/part1-initial-screen.png)
 
 When you're done, you'll have something that looks like this:
 
-![scene it 2](.././img/sceneitImg2.png)
+![scene it 2](images/part1-finished-preview.png)
 
 Since we're not actually using the OMDB API until part 2, for now there's a file
 called data.js that contains some movie data. The search bar will "work", but it
@@ -81,7 +79,7 @@ parameter - This anonymous function should have one parameter, you can call it
 called `movieHTML`
 1. Take a step back! Let's look at the data in _data.js:_
 
-![scene it 1](.././img/sceneitImg3.png)
+![scene it 1](images/part1-js-data.png)
 
 - Notice that this array contains many objects The `movieData` variable will be
   passed in as `movieArray` in the `renderMovies` function we're currently

@@ -1,7 +1,7 @@
-# Scene It App
-####  Part 3: Querying the OMDB API
+# Scene It Part 3: Querying the OMDB API
 
-## Your task:
+## Your Task
+
 Once you've finished Part 2, your Scene It app should allow the
 user to save movies to their "watch list". Now that the core of your front end
 application is finished, your task for part 3 is to hook up your front end to
@@ -94,7 +94,7 @@ You can use Postman to test out a search for the keyword "Dark" - you should see
 a response like: (not shown in the screenshot below are the keys `totalResults`
 and `Response`.
 
-![scene it 1](../img/sceneitImg4.png)
+![scene it 1](images/part3-json-response.png)
 
 Notice that the array under the key "Search" looks exactly like the hard coded
 data we've been using in data.js!
@@ -118,7 +118,7 @@ though, we still need to pass the omdb results through our `renderMovies()`
 function) . Now, when you submit a new search, you should see network requests
 showing up in the Network tab in Chrome Developer Tools.
 
-![scene it 1](../img/sceneitImg5.png)
+![scene it 1](images/part3-devtools.png)
 
 ### Step 4- Show OMDB's movie data using renderMovies()
 
@@ -138,7 +138,7 @@ moviesContainer.innerHTML = movieHTML;
 
 That's it! Now you should be able to search for whatever movies you want!
 
-![scene it 1](../img/sceneitImg6.png)
+![scene it 1](images/part3-finished.png)
 
 ## That's it! What's next?
 

@@ -1,7 +1,6 @@
-# Scene It App
-### Part 2: Creating a Watchlist with localStorage
+# Scene It Part 2: Creating a Watchlist with localStorage
 
-## Your task :
+## Your Task
 
 If you've finished part 1, your Scene It app should be showing movies to the
 screen when you enter data into the search bar. Your task for part 2 is to
