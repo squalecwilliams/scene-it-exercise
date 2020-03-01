@@ -89,13 +89,15 @@ called `movieHTML`
   we want to access a movie's title, for instance, you'd use
   `currentMovie.Title`
 
-1. Knowing this, use template literals (\`\`) on `currentMovie` to start
+1. Knowing this, use [template
+literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+(example: `` `example` ``) on `currentMovie` to start
 building out your movie HTML. 7. At the very end, make sure to `return
 finalHTML.join('')` - This return statement should be after the map() loop,
 not inside of it 8. Test that your render function works!
 
    - Somewhere in your document ready block, set the innerHTML of
-   - movie-container to `renderMovies(movieData`
+   - movie-container to `renderMovies(movieData)`
 
 Nice! You should see a bunch of movies show in your DOM.
 
