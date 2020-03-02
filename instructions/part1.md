@@ -136,7 +136,9 @@ first line in the anonymous function should be `evt.preventDefault()`
 And that's it! Now, when you refresh the page there won't be any movies. Only
 when you search for something will you see the movies.
 
-In [Part 2], we'll tackle those "add" buttons. When you click on the buttons, the
+Next up, we'll tackle those "add" buttons. When you click on the buttons, the
 movie id will be saved to `localStorage` and rendered to your "watchlist".
+
+Be sure to `git commit` your progress before moving on to [Part 2].
 
 [Part 2]:part2.md

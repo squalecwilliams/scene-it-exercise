@@ -19,7 +19,7 @@ HTML into the DOM (specifically, inside `<div id="moviesContainer">`). Instead
 of passing `movieData` into `renderMovies()`, we're going to pull a similar
 array from the OMDB API and pass that through `renderMovies()`.
 
-## Step 2- Get the search string from the \<input\> tag
+## Step 2 - Get the search string from the \<input\> tag
 
 We know that the submit listener's callback will trigger whenever the user
 submits a search string in the search bar. We might as well grab the string they
@@ -72,9 +72,9 @@ Notice that the space got replaced with %20 in the querystring!
 var URLEncodedSearchString = encodeURIComponent(searchString);
 ```
 
-## Step 3- Use AJAX to query the OMDB API
+## Step 3 - Use AJAX to query the OMDB API
 
-Now that we know what the user wants to search for, we can use ajax to poll the
+Now that we know what the user wants to search for, we can use AJAX to poll the
 OMDB API. You can take a look at the documentation for the omdb api here:
 http://www.omdbapi.com/
 
@@ -119,7 +119,7 @@ showing up in the Network tab in Chrome Developer Tools.
 
 ![scene it 1](images/part3-devtools.png)
 
-## Step 4- Show OMDB's movie data using renderMovies()
+## Step 4 - Show OMDB's movie data using renderMovies()
 
 We're at the finish line! If you haven't deleted your old code already, you
 should see two lines in your code like:
@@ -139,7 +139,9 @@ That's it! Now you should be able to search for whatever movies you want!
 
 ![scene it 1](images/part3-finished.png)
 
-## That's it! What's next?
+## Part 3 Wrap-up - What's next?
+
+Now would be a good time to `git commit` your work.
 
 Dang, that's a pretty spiffy application you've got there! It's definitely
 something to be proud of! First things first, let's make sure your code on

@@ -27,7 +27,7 @@ listener to the "movies-container" div.
   - Inject the IMDB id of the movie as the parameter passed in to `saveToWatchlist()` using `${   }` notation
 1. Elsewhere in your "document ready" block, define the function `saveToWatchlist(imdbID)`
 
-## Step 2- Implement saveToWatchlist
+## Step 2 - Implement saveToWatchlist
 
 At this point, the user should be able to trigger our `saveToWatchlist` function
 by clicking on the different "Add movie" buttons on the page. For this next
@@ -88,26 +88,33 @@ watchlist back to `localStorage`.
 And that's it! Now, when you click the add button for any given movie, you
 should see it's data saved into local storage under the key "watchlist"!
 
-## Step 3- Create the "My Watchlist" page
+## Step 3 - Create the "My Watchlist" page
 
 Now that we know what movies the user wants to watch, we can give them an
 interface to see what movies they've saved.
 
-1. Somewhere in index.html, add a link that says "Go to my watchlist"
-  - Have that link navigate to "/watchlist.html"
-1. Create a new watchlist.html file
-1. Complete this html in a similar style to index.html
+1. Somewhere in `index.html`, add a link that says "Go to my watchlist"
+  - Have that link navigate to `"/watchlist.html"`
+1. Create a new `watchlist.html` file
+1. Complete this html in a similar style to `index.html`
   - Have the "Scene It" title at the top
   - Don't include a search bar this time
-  - Have a "movies-container" `<div>` to hold the list of saved movies
-1. Write a watchlist.js file that does the following:
+  - Have a `<div id="moviesContainer">` to hold the list of saved movies
+1. Write a `watchlist.js` file that does the following:
   - When the page loads, pull the watchlist from `localStorage`
   ```js
   localStorage.getItem('watchlist');
   ```
-  - Renders each movie to "movies-container", just like in index.js
-  - You can have the movies render exactly like they did in index.js, or you can switch it up!
+  - Renders each movie to `<div id="moviesContainer">`, just like in `index.js`
+  - You can have the movies render exactly like they did in `index.js`, or you can switch it up!
+
+## Part 2 Wrap up
 
 You'll find that the above ^^ is almost identical to what you did in Part 1! The
-only difference is that instead of showing a list of movies from data.js,
+only difference is that instead of showing a list of movies from `js/movies-mock-data.js`,
 you'll be showing a list of movies from `localStorage.getItem('watchlist')`;
+
+Be sure to `git commit` your work, then let's move on to [Part 3] and connect
+our application to the OMDB API!
+
+[Part 3]:part3.md
