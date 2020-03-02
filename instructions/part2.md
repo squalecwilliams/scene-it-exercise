@@ -2,21 +2,20 @@
 
 ## Your Task
 
-If you've finished part 1, your Scene It app should be showing movies to the
-screen when you enter data into the search bar. Your task for part 2 is to
+If you've finished Part 1, your Scene It app should be showing movies to the
+screen when you enter data into the search bar. Your task for Part 2 is to
 implement a feature that allows users to save movies to their "watch list".
 
 When you're done, users will be able to press the "add" button on a selected
 movie, and then later click on "Go to my watchlist" to see the movies that
 they've saved.
 
-Since we're not actually using the OMDB API until part 3, for now there's a file
+Since we're not actually using the OMDB API until Part 3, for now there's a file
 called data.js that contains some movie data. The search bar will "work", but it
 will always show the list of movies in data.js, no matter what you enter into
 the search bar.
 
-## Let's do it!
-### Step 1 - Set up a click listener on the movies
+## Step 1 - Set up a click listener on the movies
 
 Now that there are movies showing up underneath the search bar, we can make them
 clickable. Just like with the to-do list app, we'll have to attach a click
@@ -28,7 +27,7 @@ listener to the "movies-container" div.
   - Inject the IMDB id of the movie as the parameter passed in to `saveToWatchlist()` using `${   }` notation
 1. Elsewhere in your "document ready" block, define the function `saveToWatchlist(imdbID)`
 
-### Step 2- Implement saveToWatchlist
+## Step 2- Implement saveToWatchlist
 
 At this point, the user should be able to trigger our `saveToWatchlist` function
 by clicking on the different "Add movie" buttons on the page. For this next
@@ -51,7 +50,7 @@ data from data.js:
   - In the end, you'll have
   ```js
     var movie = movieData.find(function(currentMovie){  
-      return currentMovie.imdbID == imdbID;
+      return currentMovie.imdbID === imdbID;
     });
   ```
 
@@ -89,7 +88,7 @@ watchlist back to `localStorage`.
 And that's it! Now, when you click the add button for any given movie, you
 should see it's data saved into local storage under the key "watchlist"!
 
-### Step 3- Create the "My Watchlist" page
+## Step 3- Create the "My Watchlist" page
 
 Now that we know what movies the user wants to watch, we can give them an
 interface to see what movies they've saved.

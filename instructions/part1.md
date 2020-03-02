@@ -71,38 +71,42 @@ how you design your app, the general process is the same:
 ## Step 2 - Render movies
 
 Now that you have the appropriate HTML and CSS, you can write a `renderMovies()`
-function that will generate the right HTML based off the data in `js/data.js`
+function that will generate the right HTML based off the data in `js/movies-mock-data.js`
 
 When you're done with this step, you'll have a function that will take in an
 **array of movie objects** and return **a string of HTML** that looks like the
-HTML you wrote in step 1.
+HTML you wrote in Step 1.
 
-1. In `index.js`, start off by writing a "document ready" block:
+1. In `index.js`, start off by writing an `init` function that will fire when the
+  "document ready" event occurs (ie: when the page has finished loading):
   ```js
-  document.addEventListener('DOMContentLoaded', function() { });
+  function init () {
+    // this function will execute when the browser has loaded the page
+  }
+
+  document.addEventListener('DOMContentLoaded', init)
   ```
-1. Inside the "document ready" block, define a function called `renderMovies`
-1. Make the function take one parameter called `movieArray`
-1. Write a `.map()` loop on the `movieArray` parameter. Remember that `.map()`
+1. Above your `init` function, define another function `renderMovies` that takes one argument: `movies`
+   ```js
+   function renderMovies (movies) {
+
+   }
+   ```
+1. Inside `renderMovies`, write a `.map()` loop on the `movies` parameter. Remember that `.map()`
 takes an function as an argument. This function should have one parameter, you
 can call it `currentMovie`. Take the result of this `.map()` and save it to a
-variable called `movieHTML`
-1. Take a step back! Let's look at the data in `js/data.js`:
+variable called `moviesHTML`
+1. Take a step back! Let's look at the data in `js/movies-mock-data.js`:
   ![scene it 1](images/part1-js-data.png)
-1. Notice that this array contains many objects The `movieData` variable will be
-  passed in as `movieArray` in the `renderMovies` function we're currently
-  writing That means the `currentMovie` will be just one of these objects If
-  we want to access a movie's title, for instance, you'd use
-  `currentMovie.Title`
-
-1. Knowing this, use [template literals] (example: `` `example` ``) on `currentMovie` to start
-building out your movie HTML. 7. At the very end, make sure to `return
-finalHTML.join('')` - This return statement should be after the map() loop,
-not inside of it
-
-8. Test that your render function works:
-   - Somewhere in your document ready block, set the innerHTML of
-   - movie-container to `renderMovies(movieData)`
+1. Notice that this is an array of objects. The `movieData` variable from `js/movies-mock-data.js` will
+be passed in as `movies` in the `renderMovies` function we are currently
+writing. That means that `currentMovie` will be one of these objects. If we
+want to access a movie's title, for instance, you'd use `currentMovie.Title`
+1. Knowing this, use [template literals] on `currentMovie` to start building out your movie HTML.
+1. At the very end, make sure to `return moviesHTML.join('')` - This return
+statement should be after the `.map()` loop, not inside of it.
+1. Let's test that our render function works. Back in your `init` function, set
+the `innerHTML` of `<div id="moviesContainer">` to `renderMovies(movieData)`
 
 Nice! You should see a bunch of movies show in your DOM.
 
@@ -111,7 +115,7 @@ Nice! You should see a bunch of movies show in your DOM.
 ## Step 3 - Make movies show up whenever you use the search bar
 
 Now that we know we can get movies to show up on screen, we can control exactly
-when that happens. Remember, we're building a movie search tool! We only want
+when that happens. Remember, we're building a movie search tool: we only want
 movies to show up when you search for them.
 
 1. Delete your code from part 8 of Step 2
@@ -133,6 +137,6 @@ And that's it! Now, when you refresh the page there won't be any movies. Only
 when you search for something will you see the movies.
 
 In [Part 2], we'll tackle those "add" buttons. When you click on the buttons, the
-movie id will be saved to `localStorage` and rendered to your "watchlist"
+movie id will be saved to `localStorage` and rendered to your "watchlist".
 
 [Part 2]:part2.md

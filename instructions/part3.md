@@ -10,17 +10,16 @@ the OMDB API back end!
 When you're done, you'll be able to delete data.js - instead of pulling in that
 hard coded data, we'll be pulling in search data from omdbapi.com!
 
-## Let's do it!
-### Step 1 - Look at the code we're going to refactor
+## Step 1 - Look at the code we're going to refactor
+
 Take a look at the callback function inside of your search form submit listener.
 So far, this code just renders the movie data array in data.js, saves the
 resulting HTML string to `movieHTML`, and then uses innerHTML to insert that
-HTML into the DOM (specifically, inside the `<div>` with
-`class="movies-container"`). Instead of passing `movieData` into
-`renderMovies()`, we're going to pull a similar array from the OMDB API and pass
-that through `renderMovies()`.
+HTML into the DOM (specifically, inside `<div id="moviesContainer">`). Instead
+of passing `movieData` into `renderMovies()`, we're going to pull a similar
+array from the OMDB API and pass that through `renderMovies()`.
 
-### Step 2- Get the search string from the \<input\> tag
+## Step 2- Get the search string from the \<input\> tag
 
 We know that the submit listener's callback will trigger whenever the user
 submits a search string in the search bar. We might as well grab the string they
@@ -73,7 +72,7 @@ Notice that the space got replaced with %20 in the querystring!
 var URLEncodedSearchString = encodeURIComponent(searchString);
 ```
 
-### Step 3- Use ajax to query the OMDB API
+## Step 3- Use AJAX to query the OMDB API
 
 Now that we know what the user wants to search for, we can use ajax to poll the
 OMDB API. You can take a look at the documentation for the omdb api here:
@@ -113,14 +112,14 @@ function(response) {
 }
 ```
 
-That's all it takes to query the omdb API using jquery! (We're not done yet
+That's all it takes to query the omdb API using jQuery! (We're not done yet
 though, we still need to pass the omdb results through our `renderMovies()`
-function) . Now, when you submit a new search, you should see network requests
+function). Now, when you submit a new search, you should see network requests
 showing up in the Network tab in Chrome Developer Tools.
 
 ![scene it 1](images/part3-devtools.png)
 
-### Step 4- Show OMDB's movie data using renderMovies()
+## Step 4- Show OMDB's movie data using renderMovies()
 
 We're at the finish line! If you haven't deleted your old code already, you
 should see two lines in your code like:
@@ -144,11 +143,11 @@ That's it! Now you should be able to search for whatever movies you want!
 
 Dang, that's a pretty spiffy application you've got there! It's definitely
 something to be proud of! First things first, let's make sure your code on
-github is up to par. You should probably:
+GitHub is up to par. You should probably:
 
 1. Delete any scratch code
-1. Remove any unhelpful console.log()s or comments
-1. Make sure the version you push up to github is in working order
+1. Remove any unhelpful `console.log()` statements or comments
+1. Make sure the version you push up to GitHub is in working order
 1. Deploy your application to surge, netlify, or github pages
 1. If you have a portfolio website, include a link to your Scene It app
 
