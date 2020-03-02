@@ -49,9 +49,9 @@ data from data.js:
   - Have this anonymous function return `currentMovie.imdbID == imdbID`
   - In the end, you'll have
   ```js
-    var movie = movieData.find(function(currentMovie){  
-      return currentMovie.imdbID === imdbID;
-    });
+  let movie = movieData.find(function (currentMovie) {
+      return currentMovie.imdbID === imdbID
+  })
   ```
 
 Whew! We have only a little bit more work to do! Now that the variable `movie`
@@ -62,27 +62,27 @@ watchlist back to `localStorage`.
 1. In the next line (still inside `saveToWatchlist`), pull down the watchlist from local storage
 
   ```js
-  var watchlistJSON = localStorage.getItem('watchlist');
+  let watchlistJSON = localStorage.getItem('watchlist')
   ```
 
 1. Parse the watchlist with JSON
   ```js
-  var watchlist = JSON.parse(watchlistJSON);
+  let watchlist = JSON.parse(watchlistJSON)
   ```
 1. Use an if-statement to check if the watchlist is `null`
   - If it is `null`, set watchlist to an empty array
   - Try this on your own! Call me over if you're having trouble with this one.
 1. Push movie into the watchlist
   ```js
-  watchlist.push(movie);
+  watchlist.push(movie)
   ```
 1. Turn the watchlist back into JSON
   ```js
-  watchlistJSON = JSON.stringify(watchlist);
+  watchlistJSON = JSON.stringify(watchlist)
   ```
 1. Save the JSONified watchlist back into local storage
   ```js
-  localStorage.setItem('watchlist', watchlistJSON);
+  localStorage.setItem('watchlist', watchlistJSON)
   ```
 
 And that's it! Now, when you click the add button for any given movie, you
@@ -112,7 +112,7 @@ interface to see what movies they've saved.
 
 You'll find that the above ^^ is almost identical to what you did in Part 1! The
 only difference is that instead of showing a list of movies from `js/movies-mock-data.js`,
-you'll be showing a list of movies from `localStorage.getItem('watchlist')`;
+you'll be showing a list of movies from `localStorage.getItem('watchlist')`.
 
 Be sure to `git commit` your work, then let's move on to [Part 3] and connect
 our application to the OMDB API!

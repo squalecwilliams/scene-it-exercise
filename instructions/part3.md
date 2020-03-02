@@ -62,14 +62,14 @@ with a URL-friendly search string like this:
 http://www.omdbapi.com/?apikey=3430a78&s=Fun%20With
 ```
 
-Notice that the space got replaced with %20 in the querystring!
+Notice that the space got replaced with `%20` in the query string.
 
 1. Create another variable called URLEncodedSearchString
-1. Set it equal to encodeURIComponent()
-1. In the same line, pass in searchString as the parameter
+1. Set it equal to `encodeURIComponent()`
+1. In the same line, pass in `searchString` as the parameter
 1. You should end up with a line:
 ```js
-var URLEncodedSearchString = encodeURIComponent(searchString);
+let URLEncodedSearchString = encodeURIComponent(searchString)
 ```
 
 ## Step 3 - Use AJAX to query the OMDB API
@@ -106,11 +106,13 @@ Alrighty, enough dilly-dallying, let's get to it!
  ```
 1. Chain a .then() after axios.get();
 1. Provide .then() with an anonymous function that has response as its parameter. Console log response.data in its body:
-```js
-function(response) {
-	console.log(response.data);
-}
-```
+  ```js
+  function (response) {
+    console.log('here is the response from the OMDB API:')
+    console.log(response.data)
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+  }
+  ```
 
 That's all it takes to query the omdb API using jQuery! (We're not done yet
 though, we still need to pass the omdb results through our `renderMovies()`
@@ -125,8 +127,8 @@ We're at the finish line! If you haven't deleted your old code already, you
 should see two lines in your code like:
 
 ```js
-var movieHTML = renderMovies(movieData);
-moviesContainer.innerHTML = movieHTML;
+let movieHTML = renderMovies(movieData)
+moviesContainer.innerHTML = movieHTML
 ```
 
 1. Go ahead and copy these two lines to your clipboard and then delete them.
