@@ -15,11 +15,11 @@ called data.js that contains some movie data. The search bar will "work", but it
 will always show the list of movies in data.js, no matter what you enter into
 the search bar.
 
-## Step 1 - Set up a click listener on the movies
+## Step 1 - Add an event handler for clicking on a movie
 
-Now that there are movies showing up underneath the search bar, we can make them
-clickable. Just like with the to-do list app, we'll have to attach a click
-listener to the "movies-container" div.
+Now that there are movies showing up underneath the search bar, we need to make
+them clickable. Let's add an event handler to the `<div id="moviesContainer">`
+element that will capture a click event.
 
 1. Revisit your `renderMovies()` function
 1. Look in your template literal strings for wherever you're rendering an "add movie" `<button>`  tag.
