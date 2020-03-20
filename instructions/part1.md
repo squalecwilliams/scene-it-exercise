@@ -52,11 +52,11 @@ how you design your app, the general process is the same:
    element with class `"movie"` (ie: `<div class="movie"></div>`). This div will
    represent a single movie.
 1. Flush out your `<div class="movie">`:
-  - Include an `<image />` element somewhere for the movie poster
-  - Include an element for the movie title
-  - Include an element for the movie release date
-  - Include an "add" button somewhere
-  - Remember to pick semantically meaningful tags for these HTML elements
+   - Include an `<image />` element somewhere for the movie poster
+   - Include an element for the movie title
+   - Include an element for the movie release date
+   - Include an "add" button somewhere
+   - Remember to pick semantically meaningful tags for these HTML elements
 1. Style your `<div class="movie">` and its children with CSS. If you end up
    using Bootstrap cards, you may not need to write much custom CSS!
 1. Once you're satisfied with your `<div class="movie">`, copy and paste it a
@@ -70,7 +70,7 @@ how you design your app, the general process is the same:
 
 ## Step 2 - Render movies
 
-Now that you have the appropriate HTML and CSS, you can write a `renderMovies()`
+Now that you have the appropriate HTML and CSS, you can write a `buildMoviesHTML()`
 function that will generate the right HTML based off the data in `js/movies-mock-data.js`
 
 When you're done with this step, you'll have a function that will take in an
@@ -86,27 +86,27 @@ HTML you wrote in Step 1.
 
   document.addEventListener('DOMContentLoaded', init)
   ```
-1. Above your `init` function, define another function `renderMovies` that takes one argument: `movies`
+1. Above your `init` function, define another function `buildMoviesHTML` that takes one argument: `movies`
    ```js
-   function renderMovies (movies) {
+   function buildMoviesHTML (movies) {
 
    }
    ```
-1. Inside `renderMovies`, write a `.map()` loop on the `movies` parameter. Remember that `.map()`
+1. Inside `buildMoviesHTML`, write a `.map()` loop on the `movies` parameter. Remember that `.map()`
 takes an function as an argument. This function should have one parameter, you
 can call it `currentMovie`. Take the result of this `.map()` and save it to a
 variable called `moviesHTML`
 1. Take a step back! Let's look at the data in `js/movies-mock-data.js`:
   ![scene it 1](images/part1-js-data.png)
 1. Notice that this is an array of objects. The `movieData` variable from `js/movies-mock-data.js` will
-be passed in as `movies` in the `renderMovies` function we are currently
+be passed in as `movies` in the `buildMoviesHTML` function we are currently
 writing. That means that `currentMovie` will be one of these objects. If we
 want to access a movie's title, for instance, you'd use `currentMovie.Title`
-1. Knowing this, use [template literals] on `currentMovie` to start building out your movie HTML.
+1. Knowing this, use [template literals] on `currentMovie` to start building out your movie HTML. You may want to make a separate `buildSingleMovieHTML` function for this part.
 1. At the very end, make sure to `return moviesHTML.join('')` - This return
 statement should be after the `.map()` loop, not inside of it.
 1. Let's test that our render function works. Back in your `init` function, set
-the `innerHTML` of `<div id="moviesContainer">` to `renderMovies(movieData)`
+the `innerHTML` of `<div id="moviesContainer">` to `buildMoviesHTML(movieData)`
 
 Nice! You should see a bunch of movies show in your DOM.
 
@@ -121,9 +121,11 @@ movies to show up when you search for them.
 1. Delete your code from part 8 of Step 2
 1. Replace it with a form submit listener:
   ```js
-  document.getElementById('myForm').addEventListener('submit', function(evt) {
-    //...
-  })
+  function submitSearchForm (evt) {
+
+  }
+
+  document.getElementById('moviesSearchForm').addEventListener('submit', submitSearchForm)
   ```
 1. You'll notice that if you try to do a search right now, the page refreshes.
 We can stop that with the built-in `preventDefault` function. Make sure the

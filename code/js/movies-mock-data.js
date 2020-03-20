@@ -1,4 +1,4 @@
-var movieData = [
+const movieData = [
   {
     Title: 'The Dark Knight',
     Year: '2008',
