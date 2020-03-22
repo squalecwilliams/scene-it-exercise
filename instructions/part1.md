@@ -78,14 +78,14 @@ When you're done with this step, you'll have a function that will take in an
 HTML you wrote in Step 1.
 
 1. In `index.js`, start off by writing an `init` function that will fire when the
-  "document ready" event occurs (ie: when the page has finished loading):
-  ```js
-  function init () {
-    // this function will execute when the browser has loaded the page
-  }
+   "document ready" event occurs (ie: when the page has finished loading):
+   ```js
+   function init () {
+     // this function will execute when the browser has loaded the page
+   }
 
-  document.addEventListener('DOMContentLoaded', init)
-  ```
+   document.addEventListener('DOMContentLoaded', init)
+   ```
 1. Above your `init` function, define another function `buildMoviesHTML` that takes one argument: `movies`
    ```js
    function buildMoviesHTML (movies) {
