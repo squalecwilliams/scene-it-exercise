@@ -60,30 +60,29 @@ watchlist from `localStorage`, add it to the watchlist, and then save the
 watchlist back to `localStorage`.
 
 1. In the next line (still inside `saveToWatchlist`), pull down the watchlist from local storage
-
-  ```js
-  let watchlistJSON = localStorage.getItem('watchlist')
-  ```
+   ```js
+   let watchlistJSON = localStorage.getItem('watchlist')
+   ```
 
 1. Parse the watchlist with JSON
-  ```js
-  let watchlist = JSON.parse(watchlistJSON)
-  ```
+   ```js
+   let watchlist = JSON.parse(watchlistJSON)
+   ```
 1. Use an if-statement to check if the watchlist is `null`
   - If it is `null`, set watchlist to an empty array
   - Try this on your own! Call me over if you're having trouble with this one.
 1. Push movie into the watchlist
-  ```js
-  watchlist.push(movie)
-  ```
+   ```js
+   watchlist.push(movie)
+   ```
 1. Turn the watchlist back into JSON
-  ```js
-  watchlistJSON = JSON.stringify(watchlist)
-  ```
+   ```js
+   watchlistJSON = JSON.stringify(watchlist)
+   ```
 1. Save the JSONified watchlist back into local storage
-  ```js
-  localStorage.setItem('watchlist', watchlistJSON)
-  ```
+   ```js
+   localStorage.setItem('watchlist', watchlistJSON)
+   ```
 
 And that's it! Now, when you click the add button for any given movie, you
 should see it's data saved into local storage under the key `"watchlist"`!
