@@ -1,4 +1,4 @@
-const movieData = [
+const movData = [
   {
     Title: 'The Dark Knight',
     Year: '2008',

@@ -13,3 +13,66 @@ body {
 .results {
 	margin-top: 20px;
 }
+
+#moviesContainer {
+	display: flex;
+	justify-content: space-between;
+	align-content: space-around;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+#watchlistContainer {
+	display: flex;
+	justify-content: space-between;
+	align-content: space-around;
+	flex-direction: row-reverse;
+	flex-wrap: wrap-reverse;
+}
+
+.movie{
+	background-color: white;
+	width: 300px;
+	margin-right: 3%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+.txt{
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 100%;
+	padding: 2%;
+}
+
+.actual-txt{
+	display: flex;
+	justify-items: flex-start;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.date{
+	background-color: grey;
+	color: white;
+	border-radius: 5%;
+	width: 40px;
+	height: 25px;
+
+}
+
+.add-button{
+	background-color: blue;
+	color: white;
+	justify-self: flex-start;
+	width: 50px;
+}
+
+.remove-button{
+	background-color: blue;
+	color: white;
+	justify-self: flex-start;
+	width: 100px;
+}
